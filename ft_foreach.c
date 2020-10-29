@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_foreach.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bscamand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/07/20 09:45:59 by bscamand          #+#    #+#             */
-/*   Updated: 2020/07/20 20:37:11 by bscamand         ###   ########.fr       */
+/*   Created: 2020/07/28 20:52:26 by bscamand          #+#    #+#             */
+/*   Updated: 2020/07/28 20:52:29 by bscamand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int		ft_strlen(char *str)
+void	ft_foreach(int *tab, int length, void (*f)(int))
 {
 	int i;
 
+	if (length <= 0)
+		return ;
 	i = 0;
-	while (str[i] != '\0')
+	while (i < length)
 	{
+		(f)(tab[i]);
 		i++;
 	}
-	return (i);
 }
